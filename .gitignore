@@ -1,0 +1,59 @@
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# 编辑器
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 日志
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Claude Code 本地会话状态
+.claude/scheduled_tasks.json
+
+# TypeScript 增量构建缓存
+*.tsbuildinfo
+
+# ---------------------------------------------------------------------------
+# 安卓 / Expo（A0 起）
+#
+# 注意 `app/android/` 本身是**要提交**的（见 docs/决策记录.md D-025）：
+# 权限声明、exact-alarm 条目、buildArchs 都是手工调的，而 `expo prebuild --clean`
+# 会静默丢掉这些。所以这里只忽略它的构建产物与本机路径，不忽略整个目录。
+# ---------------------------------------------------------------------------
+.expo/
+expo-env.d.ts
+
+# 本机 SDK 路径，因机器而异，绝不能提交
+android/local.properties
+app/android/local.properties
+
+# Gradle / 构建产物
+.gradle/
+build/
+app/android/build/
+app/android/app/build/
+app/android/.gradle/
+app/android/.cxx/
+app/android/capacitor-cordova-android-plugins/
+
+# 签名文件：debug keystore 由工具链生成，个人 keystore 绝不入库
+*.jks
+*.keystore
+!app/android/app/debug.keystore
+
+# 原生调试产物
+*.hprof
+.cxx/

@@ -1,0 +1,32 @@
+# 换行符规范化。
+#
+# 本机 core.autocrlf=true，默认会在检出时把所有文本文件改写成 CRLF——
+# 这对 `android/gradlew` 是致命的：它是个 bash 脚本，CRLF 会让 shebang 变成
+# `#!/bin/sh\r`，报 "/bin/sh^M: bad interpreter"。所以显式钉死。
+#
+# 见 docs/决策记录.md D-025。
+* text=auto eol=lf
+
+# 必须保持 LF 的可执行脚本
+*.sh text eol=lf
+gradlew text eol=lf
+
+# Windows 批处理必须是 CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 二进制，不要动
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.wav binary
+*.mp3 binary
+*.jks binary
+*.keystore binary
+*.so binary
+*.a binary
+*.apk binary
+*.xlsx binary
